@@ -1,6 +1,5 @@
 #!/bin/bash
 targets=$(printenv | grep custom_)
-disown -h $(tailscaled) &
 sleep 5s
 
 while IFS= read -r line; do
