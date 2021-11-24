@@ -6,7 +6,7 @@ Bridge container for connecting Docker networks to Tailscale with port forwardin
 ## Usage
 I have a docker-compose stack that I wish to expose to my Tailscale network in a host-agnostic manner. This container acts as the bridge between the internal Docker network and Tailscale, by configuring iptables rules that forward content received on arbitrary ports from the Tailscale container to the relevant container in the Docker network. 
 
-![This is my Synology for example](images/synology-example)
+![This is my Synology for example](images/synology-example.png)
 
 In this example, the `tailscale` container ports 80 and 443 are linked to the `caddy` container ports 80 and 443, similar for DNS/DHCP on the `pi-hole` container. These hostnames are resolved by the script to make it resilient to changes in the Docker network's IP allocations, etc.
 
