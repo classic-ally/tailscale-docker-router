@@ -1,6 +1,7 @@
 #!/bin/bash
 targets=$(printenv | grep custom_)
 sleep 5s
+tailscale up --accept-dns=false
 
 while IFS= read -r line; do
 	tmp=$(awk -F= '{print $2}' <<< $line)
